@@ -29,7 +29,9 @@
     "@babel/core": "^7.0.1",
     "@babel/preset-env": "^7.0.0",
     "@babel/preset-react": "^7.0.0",
-    "babel-loader": "^8.0.2"
+    "babel-loader": "^8.0.2",
+    "webpack": "^4.19.0",
+    "webpack-cli": "^3.1.0"
   },
   "_moduleAliases": {
     "@dev-blogger/shared": "js-shared/dist"
