@@ -11,7 +11,7 @@ License: A "Slug" license name e.g. GPL2
 */
 
 function devb_enqueue_block_editor_assets() {
-	wp_register_script( 'devb_gutenberg_blocks', plugins_url( '/js/dist/gutenberg-blocks.js', __FILE__ ), null, true );
+	wp_register_script( 'devb_gutenberg_blocks', plugins_url( '/js-plugin/dist/gutenberg-blocks.js', __FILE__ ), null, true );
 	wp_enqueue_script( 'devb_gutenberg_blocks' );
 }
 

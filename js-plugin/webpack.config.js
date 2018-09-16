@@ -23,7 +23,7 @@ module.exports = {
 	},
 	resolve: {
 		alias: {
-			"@dev-blogger/shared": "../js-shared/dist",
+			"@dev-blogger/shared": path.resolve( __dirname, "..", "js-shared", "dist" ),
 		},
 	},
 };

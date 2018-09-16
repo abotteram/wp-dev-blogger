@@ -1,14 +1,18 @@
+import * as Element from "@wordpress/element";
 import {
-	render
-} from "@wordpress/element";
+	HighlightedCode,
+	resolveReact
+} from "@dev-blogger/shared";
+
+resolveReact( Element );
 
 const virtualEl = document.createElement( "div" );
 
-window.devBlogger = {};
+window.devBlogger = window.devBlogger || {};
 window.devBlogger.element = virtualEl;
 
-render(
-	<h1>JSX TEST</h1>,
+Element.render(
+	<HighlightedCode>JSX TEST</HighlightedCode>,
 	virtualEl
 );
 

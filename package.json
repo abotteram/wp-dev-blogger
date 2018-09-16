@@ -19,7 +19,6 @@
   },
   "homepage": "https://github.com/Xyfi/wp-dev-blogger#readme",
   "dependencies": {
-    "@wordpress/babel-plugin-import-jsx-pragma": "^1.1.0",
     "@wordpress/element": "^2.0.0",
     "express": "^4.16.3",
     "module-alias": "^2.1.0"
