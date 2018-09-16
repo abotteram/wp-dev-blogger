@@ -20,5 +20,10 @@ module.exports = {
 				loader: "babel-loader",
 			}
 		]
-	}
+	},
+	resolve: {
+		alias: {
+			"@dev-blogger/shared": "../js-shared/dist",
+		},
+	},
 };

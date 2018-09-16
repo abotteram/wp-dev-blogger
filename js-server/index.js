@@ -1,3 +1,6 @@
+/* Setup aliases */
+require('module-alias/register');
+
 const http = require( "http" );
 const app = require( "./app" );
 
