@@ -1,10 +1,11 @@
 {
   "plugins": [
+    "@babel/plugin-proposal-class-properties"
   ],
   "presets": [
     "@babel/preset-env",
     [ "@babel/preset-react", {
-      "pragma": "( global || window )._devBlogger.React.createElement"
+      "pragma": "wp.element.createElement"
     } ]
   ]
 }

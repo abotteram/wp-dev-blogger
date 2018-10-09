@@ -1,0 +1,16 @@
+{
+    "name": "alexander/dev-blogger",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Alexander Botteram",
+            "email": "a.botteram@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "classmap": [
+            "admin"
+        ]
+    }
+}

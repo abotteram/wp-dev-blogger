@@ -1,17 +1,18 @@
 const path = require( "path" );
 
 module.exports = {
-	context: __dirname,
 	entry: {
-		"gutenberg-blocks": "./src/gutenberg-blocks.js",
+		"edit-page": "./js/src/edit-page.js",
 	},
 	output: {
-		path: path.resolve( __dirname, "dist" ),
+		path: path.resolve( __dirname, "js", "dist" ),
 		filename: "[name].js",
 		jsonpFunction: "devbWebpackJsonp",
 	},
 	externals: {
 		"@wordpress/element": "window.wp.element",
+		"@wordpress/blocks": "window.wp.blocks",
+		"@wordpress/components": "window.wp.components",
 	},
 	module: {
 		rules: [
@@ -20,10 +21,5 @@ module.exports = {
 				loader: "babel-loader",
 			}
 		]
-	},
-	resolve: {
-		alias: {
-			"@dev-blogger/shared": path.resolve( __dirname, "..", "js-shared", "dist" ),
-		},
 	},
 };
