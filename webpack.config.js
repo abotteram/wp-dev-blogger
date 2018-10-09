@@ -3,6 +3,7 @@ const path = require( "path" );
 module.exports = {
 	entry: {
 		"edit-page": "./js/src/edit-page.js",
+		"vm": "./js/src/vm.js",
 	},
 	output: {
 		path: path.resolve( __dirname, "js", "dist" ),

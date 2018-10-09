@@ -19,8 +19,8 @@ $manager = new Devb_Integrations_Manager();
 
 define( 'DEVB_PLUGIN_FILE', __FILE__ );
 
-$manager->register_integration( new Devb_Api() );
 $manager->register_integration( new Devb_Capabilities_Manager() );
+$manager->register_integration( new Devb_Api() );
 $manager->register_integration( new Devb_Gutenberg_Block_Code() );
 
 $manager->run();
