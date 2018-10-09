@@ -10,7 +10,8 @@
     "require": {},
     "autoload": {
         "classmap": [
-            "admin"
+            "admin",
+            "inc"
         ]
     }
 }
