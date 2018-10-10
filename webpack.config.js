@@ -17,6 +17,7 @@ module.exports = {
 		"@wordpress/components": "window.wp.components",
 		"@wordpress/data": "window.wp.data",
 		"@wordpress/editor": "window.wp.editor",
+		"@wordpress/api-fetch": "window.wp.apiFetch",
 	},
 	module: {
 		rules: [

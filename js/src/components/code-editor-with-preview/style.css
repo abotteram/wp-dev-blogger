@@ -11,7 +11,11 @@
     padding: 0 8px;
 }
 
-.devb-code-editor__editor-container, .devb-code-editor__preview-container {
+.devb-code-editor__editor-container {
+    flex: 2;
+}
+
+.devb-code-editor__preview-container {
     flex: 1;
 }
 

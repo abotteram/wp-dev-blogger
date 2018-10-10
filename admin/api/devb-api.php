@@ -39,9 +39,8 @@ class Devb_Api implements Devb_Integration{
 
 				$request_data = $req->get_json_params();
 
-				$code_snippet->title = $request_data[ 'title' ];
-				$code_snippet->content = $request_data[ 'content' ];
-				$code_snippet->executable = $request_data[ 'executable '];
+				$code_snippet->name = $request_data[ 'name' ];
+				$code_snippet->code = $request_data[ 'code' ];
 				$code_snippet->author = get_current_user_id();
 
 				R::store( $code_snippet );

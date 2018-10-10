@@ -1,9 +1,11 @@
 import { Component, Fragment } from "@wordpress/element";
 import { debounce } from "lodash-es";
 import { InspectorControls } from "@wordpress/editor";
-import { Button, Modal } from "@wordpress/components";
+import { Button } from "@wordpress/components";
 
 import EditorWithPreview from "../components/code-editor-with-preview";
+import SaveModal from "../components/save-modal";
+import LoadModal from "../components/load-modal";
 
 const BABEL_CONFIG = { presets: ["react"] };
 
@@ -59,12 +61,12 @@ class CodeBlock extends Component {
 					compile={ this.compile }
 					onChange={ this.onChange } />
 				<InspectorControls>
-					<Button isLarge icon="download">
-						Load an existing snippet
-					</Button>
-					<Button isLarge icon="save">
-						Save your snippet
-					</Button>
+					<SaveModal getSnippet={ () => {
+						return {
+							code: this.props.attributes.code
+						}
+					} } />
+					<LoadModal />
 				</InspectorControls>
 			</Fragment>
 		);
