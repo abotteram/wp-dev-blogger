@@ -1,0 +1,16 @@
+.devb-code-editor__container {
+    display: flex;
+    flex-direction: row;
+}
+
+.devb-code-editor__preview-container {
+    padding: 0 8px;
+}
+
+.devb-code-editor__editor-container, .devb-code-editor__preview-container {
+    flex: 1;
+}
+
+.devb-code-editor__editor-container {
+    min-height: 300px;
+}

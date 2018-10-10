@@ -9,6 +9,9 @@ const attributes = {
 	},
 	executable: {
 		type: "string",
+	},
+	mode: {
+		type: "string",
 	}
 };
 
