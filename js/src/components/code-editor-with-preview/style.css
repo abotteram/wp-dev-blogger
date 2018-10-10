@@ -1,6 +1,10 @@
 .devb-code-editor__container {
     display: flex;
     flex-direction: row;
+    border-radius: 10px;
+    border: 1px solid black;
+    overflow: hidden;
+    margin: 10px 0;
 }
 
 .devb-code-editor__preview-container {

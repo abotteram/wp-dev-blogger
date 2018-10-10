@@ -15,15 +15,14 @@ class CodeEditor extends Component {
 	componentDidMount() {
 		const editor = ace.edit( this.props.id );
 
-		editor.setTheme("ace/theme/twilight");
-		editor.session.setMode("ace/mode/jsx");
+		editor.setTheme( "ace/theme/twilight" );
+		editor.session.setMode( "ace/mode/jsx" );
 
 		editor.on( "change", () => {
 			this.props.onChange( editor.getValue() );
 		} );
 
 		setTimeout( () => {
-			console.log( "setValue", this.props.value );
 			editor.setValue( this.props.value );
 		}, 100 )
 	}

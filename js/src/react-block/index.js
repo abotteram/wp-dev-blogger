@@ -12,6 +12,9 @@ const attributes = {
 	},
 	mode: {
 		type: "string",
+	},
+	id: {
+		type: "string",
 	}
 };
 

@@ -3,7 +3,7 @@ const path = require( "path" );
 module.exports = {
 	entry: {
 		"edit-page": "./js/src/edit-page.js",
-		"vm": "./js/src/vm.js",
+		"frontend": "./js/src/frontend.js",
 		"store": "./js/src/store.js",
 	},
 	output: {
@@ -16,6 +16,7 @@ module.exports = {
 		"@wordpress/blocks": "window.wp.blocks",
 		"@wordpress/components": "window.wp.components",
 		"@wordpress/data": "window.wp.data",
+		"@wordpress/editor": "window.wp.editor",
 	},
 	module: {
 		rules: [

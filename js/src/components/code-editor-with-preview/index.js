@@ -26,10 +26,12 @@ class CodeEditorWithPreview extends Component {
 
 		this.execute( compiled );
 
-		this.props.onChange( {
-			code: newCode,
-			compiled: compiled,
-		} );
+		if ( this.props.onChange ) {
+			this.props.onChange( {
+				code: newCode,
+				compiled: compiled,
+			} );
+		}
 	}
 
 	compile( code ) {
@@ -64,6 +66,10 @@ class CodeEditorWithPreview extends Component {
 		const target = document.getElementById( this.getPreviewId() );
 		target.innerHTML = '';
 		target.appendChild( mountNode );
+	}
+
+	componentDidMount() {
+		this.onChange( this.props.code );
 	}
 
 	render() {

@@ -1,8 +1,11 @@
-import { Component } from "@wordpress/element";
+import { Component, Fragment } from "@wordpress/element";
 import { debounce } from "lodash-es";
+import { InspectorControls } from "@wordpress/editor";
+import { Button, Modal } from "@wordpress/components";
 
 import EditorWithPreview from "../components/code-editor-with-preview";
 
+const BABEL_CONFIG = { presets: ["react"] };
 
 function uuidv4() {
 	return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
@@ -20,7 +23,7 @@ class CodeBlock extends Component {
 	}
 
 	static Content = ( { attributes } ) => {
-		return <div>{ attributes.content }</div>;
+		return <div>{ attributes.code }</div>;
 	};
 
 	onChange( { code, compiled } ) {
@@ -28,31 +31,43 @@ class CodeBlock extends Component {
 	}
 
 	compile( code ) {
-		return window.devb.Babel.transform( code, { presets: ["react"] } ).code;
+		return window.devb.Babel.transform( code, BABEL_CONFIG ).code;
+	}
+
+	getId() {
+		if ( this.props.attributes.id ) {
+			return this.props.attributes.id;
+		}
+		const id = uuidv4();
+		this.props.setAttributes( { id } );
+		return id;
 	}
 
 	render() {
 		const {
 			attributes: {
-				id,
 				code,
 			},
 		} = this.props;
 
 		return (
-			<EditorWithPreview
-				id={ id }
-				code={ code }
-				onCatch={ ( type, error ) => console.warn( type, error ) }
-				compile={ this.compile }
-				onChange={ this.onChange } />
+			<Fragment>
+				<EditorWithPreview
+					id={ this.getId() }
+					code={ code }
+					onCatch={ ( type, error ) => console.warn( type, error ) }
+					compile={ this.compile }
+					onChange={ this.onChange } />
+				<InspectorControls>
+					<Button isLarge icon="download">
+						Load an existing snippet
+					</Button>
+					<Button isLarge icon="save">
+						Save your snippet
+					</Button>
+				</InspectorControls>
+			</Fragment>
 		);
-	}
-
-	componentDidMount() {
-		if ( ! this.props.attributes.id ) {
-			this.props.setAttributes( { id: uuidv4() } );
-		}
 	}
 }
 
