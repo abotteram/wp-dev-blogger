@@ -25,7 +25,7 @@ class Devb_Gutenberg_Block_Code implements Devb_Integration {
 		wp_enqueue_script( 'devb_edit_page' );
 	}
 
-	public function enqueue_frontend_scrips() {
+	public function enqueue_frontend_scripts() {
 		wp_enqueue_script( 'devb_frontend' );
 		wp_localize_script( 'devb_frontend', 'devbCodeBlocks', $this->data );
 	}
@@ -52,7 +52,7 @@ class Devb_Gutenberg_Block_Code implements Devb_Integration {
 
 		$this->data[] = $block_data;
 
-		$this->enqueue_frontend_scrips();
+		$this->enqueue_frontend_scripts();
 
 		$content = '<div id="' . $block_data[ 'id' ] . '"></div>';
 		return $content;

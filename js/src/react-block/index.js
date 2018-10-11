@@ -7,12 +7,6 @@ const attributes = {
 	code: {
 		type: "string",
 	},
-	executable: {
-		type: "string",
-	},
-	mode: {
-		type: "string",
-	},
 	id: {
 		type: "string",
 	}

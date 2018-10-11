@@ -22,6 +22,7 @@ class CodeBlock extends Component {
 
 		this.onChange = debounce( this.onChange.bind( this ), 1000 );
 		this.compile = this.compile.bind( this );
+		this.forceUpdate = this.forceUpdate.bind( this );
 	}
 
 	static Content = ( { attributes } ) => {
@@ -45,6 +46,10 @@ class CodeBlock extends Component {
 		return id;
 	}
 
+	forceUpdate( code ) {
+		this.editor.forceUpdate( code );
+	}
+
 	render() {
 		const {
 			attributes: {
@@ -55,6 +60,7 @@ class CodeBlock extends Component {
 		return (
 			<Fragment>
 				<EditorWithPreview
+					editorRef={ ref => this.editor = ref }
 					id={ this.getId() }
 					code={ code }
 					onCatch={ ( type, error ) => console.warn( type, error ) }
@@ -66,7 +72,9 @@ class CodeBlock extends Component {
 							code: this.props.attributes.code
 						}
 					} } />
-					<LoadModal />
+					<LoadModal onSelect={ code => {
+						this.forceUpdate( code );
+					} }/>
 				</InspectorControls>
 			</Fragment>
 		);

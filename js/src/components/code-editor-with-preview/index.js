@@ -81,6 +81,7 @@ class CodeEditorWithPreview extends Component {
 			<div className="devb-code-editor__container">
 				<div className="devb-code-editor__editor-container">
 					<CodeEditor
+						ref={ this.props.editorRef }
 						id={ this.getEditorId() }
 						value={ code || "" }
 						onChange={ this.onChange } />

@@ -12,18 +12,22 @@ class CodeEditor extends Component {
 		)
 	}
 
+	forceUpdate( code ) {
+		this.editor.setValue( code );
+	}
+
 	componentDidMount() {
-		const editor = ace.edit( this.props.id );
+		this.editor = ace.edit( this.props.id );
 
-		editor.setTheme( "ace/theme/twilight" );
-		editor.session.setMode( "ace/mode/jsx" );
+		this.editor.setTheme( "ace/theme/twilight" );
+		this.editor.session.setMode( "ace/mode/jsx" );
 
-		editor.on( "change", () => {
-			this.props.onChange( editor.getValue() );
+		this.editor.on( "change", () => {
+			this.props.onChange( this.editor.getValue() );
 		} );
 
 		setTimeout( () => {
-			editor.setValue( this.props.value );
+			this.editor.setValue( this.props.value );
 		}, 100 )
 	}
 }
