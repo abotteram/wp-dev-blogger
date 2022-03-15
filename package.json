@@ -33,6 +33,6 @@
     "@babel/preset-env-standalone": "^7.0.0",
     "@babel/standalone": "^7.1.0",
     "classnames": "^2.2.6",
-    "lodash-es": "^4.17.11"
+    "lodash-es": "^4.17.21"
   }
 }
